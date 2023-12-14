@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+#map {
+    height: 740px;
+    width: 1000px;
+    margin: 1rem auto; /* Adicione essa linha para centralizar horizontalmente */
+    display: flex;
+    justify-content: center;
+}
+#coordenadas {
+    margin: 0 auto;
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+}

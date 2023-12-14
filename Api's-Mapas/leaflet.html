@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plotando Mapas e Logs</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+    <link rel="stylesheet" href="leaf.css">
+    <link rel="shortcut icon" href="https://media.licdn.com/dms/image/C4E0BAQH9Vax6GEzpTQ/company-logo_200_200/0/1630653381786/unidade_furg_embrapii_sistemas_robticos_e_de_automao_logo?e=2147483647&v=beta&t=8ztjIuyiyVMpqL1SmkxspLH67vpEqXKSzQVyTd8hkz8" type="image/x-icon">
+</head>
+<body>
+    <div id="coordenadas">
+        <img src="https://media.licdn.com/dms/image/C4E0BAQH9Vax6GEzpTQ/company-logo_200_200/0/1630653381786/unidade_furg_embrapii_sistemas_robticos_e_de_automao_logo?e=2147483647&v=beta&t=8ztjIuyiyVMpqL1SmkxspLH67vpEqXKSzQVyTd8hkz8" alt="">
+        <div>
+            <p>Latitude do C3: <span id="latitude"></span></p>
+            <p>Longitude do C3: <span id="longitude"></span></p>
+        </div>
+        <div>
+            <p>Latitude Atual do Mapa: <span id="latitudeAtual"></span> </p>
+            <p>Longitude Atual do Mapa: <span id="longitudeAtual"></span> </p>
+        </div>
+    </div>
+    <div id="map"></div>
+    <script>
+        latitude = -32.0728379;
+        longitude = -52.1687589;
+        zoom = 19;
+        document.getElementById("latitude").innerHTML = latitude;
+        document.getElementById("longitude").innerHTML = longitude;
+        var map = L.map('map').setView([latitude,longitude], zoom);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+            maxZoom: 30,
+        }).addTo(map);
+
+        //nao consegui ainda const qlrLayer = new QLRLayer('data/my-qlr-file.qlr');
+        //nao consegui ainda map.addLayer(qlrLayer);
+
+        omnivore.kml('./log-campus-Vagner.kml').addTo(map);
+        omnivore.kml('./nmea-sem-time-stamp.kml').addTo(map);
+
+        function AtualizarCoordenadas() {
+            var center = map.getCenter();
+            document.getElementById("latitudeAtual").innerHTML = center.lat;
+            document.getElementById("longitudeAtual").innerHTML = center.lng;
+        }
+        
+        
+        function onMapClick(e) {
+            L.popup()
+                .setLatLng(e.latlng)
+                .setContent("Clickou em " + e.latlng.toString())
+                .openOn(map);
+        }
+
+        
+        map.on('click', onMapClick);
+        map.on('move', AtualizarCoordenadas);
+    </script>
+</body>
+</html>

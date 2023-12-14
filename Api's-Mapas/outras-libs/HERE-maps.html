@@ -1,0 +1,22 @@
+<script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+<script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+<script src="https://js.api.here.com/v3/3.1/mapsjs-drawing.js"></script>
+
+<div id="map"></div>
+
+<script>
+// Create a map instance
+var map = new H.MapView("map", {
+  zoom: 10,
+  center: {
+    latitude: -25.4244,
+    longitude: -49.2734
+  }
+});
+
+// Load the KML data
+var kmlLayer = new H.KMLLayer("../log-campus-Vagner.kml");
+
+// Add the KML layer to the map
+map.addLayer(kmlLayer);
+</script>
