@@ -34,7 +34,14 @@
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
             maxZoom: 30,
         }).addTo(map);
-
+        L.control.layers({
+        'Mapa': L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }),
+        'Satélite': L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: '© Esri'
+        })
+        }).addTo(map);
         //nao consegui ainda const qlrLayer = new QLRLayer('data/my-qlr-file.qlr');
         //nao consegui ainda map.addLayer(qlrLayer);
 
