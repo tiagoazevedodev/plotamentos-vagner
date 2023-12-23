@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="areac3kml__rea_c3" id="areac3kml__rea_c3">
+	<SimpleField name="timestamp" type="string"></SimpleField>
+	<SimpleField name="begin" type="string"></SimpleField>
+	<SimpleField name="end" type="string"></SimpleField>
+	<SimpleField name="altitudeMode" type="string"></SimpleField>
+	<SimpleField name="tessellate" type="int"></SimpleField>
+	<SimpleField name="extrude" type="int"></SimpleField>
+	<SimpleField name="visibility" type="int"></SimpleField>
+	<SimpleField name="drawOrder" type="int"></SimpleField>
+	<SimpleField name="icon" type="string"></SimpleField>
+	<SimpleField name="id" type="float"></SimpleField>
+	<SimpleField name="ÁreaC3" type="float"></SimpleField>
+</Schema>
+<Folder><name>areac3kml__rea_c3</name>
+  <Placemark>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#areac3kml__rea_c3">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="ÁreaC3">1580.49</SimpleData>
+	</SchemaData></ExtendedData>
+      <MultiGeometry><Polygon><outerBoundaryIs><LinearRing><coordinates>-52.1690827271459,-32.0731173836634 -52.1691366977222,-32.0730368305645 -52.169076282898,-32.0729868876432 -52.1689546477187,-32.072926472819 -52.1688225406365,-32.072928889412 -52.1688265682914,-32.0728209482594 -52.1688450955041,-32.0727951712678 -52.1689530366567,-32.0727355619746 -52.1688869831156,-32.072628426353 -52.1687653479362,-32.0726864245843 -52.1687202382008,-32.0726848135223 -52.1686300187301,-32.0726413148489 -52.168559937534,-32.0727428117535 -52.1686783505894,-32.0727991989227 -52.1686912390852,-32.0728169206045 -52.1686912390852,-32.0729321115359 -52.168559132003,-32.0729385557838 -52.1684366912927,-32.072998970608 -52.1683939981503,-32.0730456914054 -52.1684399134166,-32.0731206057874 -52.168487439745,-32.0730932177337 -52.1685011337718,-32.0731061062296 -52.1685937698356,-32.0730593854322 -52.1689063158593,-32.0730577743702 -52.168932898382,-32.0730601909632 -52.1690239233837,-32.0731036896366 -52.1690368118795,-32.0730948287957 -52.1690827271459,-32.0731173836634</coordinates></LinearRing></outerBoundaryIs></Polygon></MultiGeometry>
+  </Placemark>
+</Folder>
+</Document></kml>
